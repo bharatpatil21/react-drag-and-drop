@@ -8,11 +8,12 @@ In the project directory, you can run:
 
 Clone [react-drag-and-drop](https://github.com/bharatpatil21/react-drag-and-drop) repository
 
+### `cd react-drag-and-drop`
 ### `npm install`
 
 Install all depedancies required to run application
 
-### `yarn start`
+### `npm run start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
