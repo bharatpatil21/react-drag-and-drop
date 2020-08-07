@@ -1,18 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Board from './Board'
+import Board from "./Board";
+import { observe } from "./Game";
 
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Board knightPosition={[0, 0]} />
-  </React.StrictMode>,
-  document.getElementById("root")
+
+const root = document.getElementById("root");
+
+observe((knightPosition) =>
+  ReactDOM.render(
+    <React.StrictMode>
+      <Board knightPosition={knightPosition} />
+    </React.StrictMode>,
+    root
+  )
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
