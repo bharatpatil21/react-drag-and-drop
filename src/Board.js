@@ -1,6 +1,11 @@
 import React from "react";
 import Square from "./Square";
 import Knight from "./Knight";
+import { moveKnight } from "./Game";
+
+function handleSquareClick(toX, toY) {
+  moveKnight(toX, toY);
+}
 
 function renderSquare(i, [knightX, knightY]) {
   const x = i % 8;
@@ -10,7 +15,11 @@ function renderSquare(i, [knightX, knightY]) {
   const piece = isKnightHere ? <Knight /> : null;
 
   return (
-    <div key={i} style={{ width: "12.3%", height: "12vh", border: "1px solid" }}>
+    <div
+      onClick={() => handleSquareClick(x, y)}
+      key={i}
+      style={{ width: "12.3%", height: "12vh", border: "1px solid" }}
+    >
       <Square black={black}>{piece}</Square>
     </div>
   );
